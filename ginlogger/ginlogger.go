@@ -10,7 +10,7 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// LoggingMiddleware is a gin gonic middleware to use logrus for logging
+// LoggingMiddleware is a [gin.HandlerFunc] to use [logrus] as logger
 func LoggingMiddleware(ctx *gin.Context) {
 	ctx.Next()
 	method := ctx.Request.Method

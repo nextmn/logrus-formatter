@@ -49,7 +49,8 @@ func newLogFormatter() *logFormatter {
 	}
 }
 
-func Init(prefix string) {
+// Init [logrus] with the logger formatter.
+func Init(appName string) {
 	logrus.SetFormatter(newLogFormatter())
-	logrus.AddHook(newHook(prefix))
+	logrus.AddHook(newHook(appName))
 }

@@ -6,8 +6,9 @@
 package ginlogger_test
 
 import (
-	"github.com/gin-gonic/gin"
 	"github.com/nextmn/logrus-formatter/ginlogger"
+
+	"github.com/gin-gonic/gin"
 )
 
 func ExampleLoggingMiddleware() {
