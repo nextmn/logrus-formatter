@@ -25,3 +25,10 @@ func LoggingMiddleware(ctx *gin.Context) {
 	}).Info("HTTP Request")
 	ctx.Next()
 }
+
+// Default creates a Gin router with default parameters, but using [LoggingMiddleware]
+func Default(opts ...gin.OptionFunc) *gin.Engine {
+	engine := gin.New()
+	engine.Use(LoggingMiddleware, gin.Recovery())
+	return engine.With(opts...)
+}
