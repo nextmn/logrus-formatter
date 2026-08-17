@@ -6,11 +6,13 @@
 package logger
 
 import (
+	"log/slog"
 	"os"
 	"sort"
 	"strings"
 
 	"github.com/sirupsen/logrus"
+	sloghook "github.com/sirupsen/logrus/hooks/slog"
 )
 
 // Customized log formatter
@@ -49,4 +51,5 @@ func newLogFormatter() *logrus.TextFormatter {
 func Init(appName string) {
 	logrus.SetFormatter(newLogFormatter())
 	logrus.AddHook(newHook(appName))
+	slog.SetDefault(slog.New(sloghook.NewHandler(logrus.StandardLogger(), nil)))
 }
