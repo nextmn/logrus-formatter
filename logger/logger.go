@@ -16,7 +16,8 @@ import (
 // Customized log formatter
 func newLogFormatter() *logrus.TextFormatter {
 	return &logrus.TextFormatter{
-		ForceColors:            os.Getenv("NO_COLOR") != "" || os.Getenv("TERM") == "dumb",
+		ForceColors:            true,
+		DisableColors:          os.Getenv("NO_COLOR") != "" || os.Getenv("TERM") == "dumb",
 		FullTimestamp:          true,
 		DisableTimestamp:       false,
 		DisableLevelTruncation: true,
