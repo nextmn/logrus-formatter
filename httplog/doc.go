@@ -3,5 +3,5 @@
 // found in the LICENSE file.
 // SPDX-License-Identifier: MIT
 
-// Package ginlogger provide [github.com/gin-gonic/gin] middleware to use [github.com/sirupsen/logrus] as logger.
-package ginlogger
+// Package logger provide a [net/http] logging middleware.
+package httplog
